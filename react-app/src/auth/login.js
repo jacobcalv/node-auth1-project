@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import './login.css'
 
 const Login = (props) => {
     const [data, setData] = useState({
@@ -15,15 +16,15 @@ const Login = (props) => {
     }
     
     const handleSubmit = (event) => {
-		event.preventDefault()
-        axios.post("localhost:5000/api/login", data)
-			.then(result => {
-				console.log(result)
-			})
-			.catch(err => {
+		  event.preventDefault()
+      axios.post("http://localhost:5000/api/login", data)
+			  .then(result => {
+				  console.log(result)
+			  })
+			  .catch(err => {
           console.log(err)
           console.log(data)
-			})
+			  })
 	}
     return(
     <div>
